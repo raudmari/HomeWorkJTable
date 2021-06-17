@@ -8,7 +8,6 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Vector;
 
 public class Controller {
     private final Model model;
@@ -90,8 +89,28 @@ public class Controller {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                String value = tableModel.getDataVector().elementAt(table.getSelectedRow()).toString();
-                view.getPnlBottom().add(new JOptionPane(JOptionPane.showInputDialog(value))); // ei ole päris õige!
+                String values = tableModel.getDataVector().elementAt(table.getSelectedRow()).toString();
+                String[] parts = values.split(",");
+                String fname = parts[0];
+                String lname = parts[1];
+                String gender = parts[2];
+                String birth = parts[3];
+                String death = parts[4];
+                String place = parts[5];
+                String type = parts[6];
+                String county = parts[7];
+
+                String rowInfo = "Eesnimi: " + fname.substring(1) + "\n"
+                        + "Perenimi: " + lname + "\n"
+                        + "Sugu: " + gender + "\n"
+                        + "Sündinud: " + birth + "\n"
+                        + "Surnud: " + death + "\n"
+                        + "Asula: " + place + "\n"
+                        + "Tüüp: " + type + "\n"
+                        + "Maakond: " + county.substring (0, county.length()-1) + "\n";
+
+                view.getPnlBottom().add(new JOptionPane(JOptionPane.showInputDialog(rowInfo))); // ei ole päris õige!
+
             }
 
             @Override
@@ -114,7 +133,7 @@ public class Controller {
 
         int row = tableModel.getRowCount();
         int col = table.getColumnCount();
-        tableModel.isCellEditable(row,col);
+        tableModel.isCellEditable(row, col);
 
         view.getPnlBottom().add(new JScrollPane(table)); // Tabeli lisamine paneelile koos kerimisribaga, kui selleks on vajadus. Vastavalt sisu suurusele
         view.pack();
