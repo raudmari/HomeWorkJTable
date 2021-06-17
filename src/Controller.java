@@ -91,7 +91,7 @@ public class Controller {
             public void mousePressed(MouseEvent e) {
                 String values = tableModel.getDataVector().elementAt(table.getSelectedRow()).toString();
                 String[] parts = values.split(",");
-                String fname = parts[0];
+                String fName = parts[0];
                 String lname = parts[1];
                 String gender = parts[2];
                 String birth = parts[3];
@@ -99,8 +99,7 @@ public class Controller {
                 String place = parts[5];
                 String type = parts[6];
                 String county = parts[7];
-
-                String rowInfo = "Eesnimi: " + fname.substring(1) + "\n"
+                String rowInfo = "Eesnimi: " + fName.substring(1) + "\n"
                             + "Perenimi: " + lname + "\n"
                             + "Sugu: " + gender + "\n"
                             + "Sündinud: " + birth + "\n"
@@ -109,8 +108,12 @@ public class Controller {
                             + "Tüüp: " + type + "\n"
                             + "Maakond: " + county.substring(0, county.length() - 1) + "\n";
 
-                view.getPnlBottom().add(new JOptionPane(JOptionPane.showInputDialog(rowInfo)));
-                // ei ole päris õige!
+                JOptionPane jop = new JOptionPane();
+                jop.setMessage(rowInfo);
+                jop.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+                JDialog dialog = jop.createDialog("Isiku info");
+                dialog.setVisible(true);
+
             }
 
             @Override
