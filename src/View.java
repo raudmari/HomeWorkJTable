@@ -4,10 +4,9 @@ import java.awt.event.ActionListener;
 
 public class View extends JFrame {
 
-    private JPanel pnlTop = new JPanel(new FlowLayout(FlowLayout.LEFT)); // paneelil olevad asjad joondatakse vasakule
-    private JPanel pnlBottom = new JPanel(new BorderLayout());
-    private JButton btnOpenFile = new JButton("Ava fail"); // nupp nimetusega Ava fail
-
+    private final JPanel pnlTop = new JPanel(new FlowLayout(FlowLayout.LEFT)); // paneelil olevad asjad joondatakse vasakule
+    private final JPanel pnlBottom = new JPanel(new BorderLayout());
+    private final JButton btnOpenFile = new JButton("Ava fail"); // nupp nimetusega Ava fail
 
     public View() {
         super("Isikud");
@@ -16,6 +15,8 @@ public class View extends JFrame {
 
         //nupu lisamine paneelile
         pnlTop.add(btnOpenFile);
+
+
         // Sellele paneelile lähevad ülemine ja alumine paneel
         JPanel container = new JPanel(new BorderLayout());
         container.add(pnlTop, BorderLayout.NORTH);
@@ -26,7 +27,6 @@ public class View extends JFrame {
 
     /**
      * fileOpen nupu funktsionaalsus
-     * @param al
      */
 
     public void registerFileOpenBtn(ActionListener al) {
@@ -34,11 +34,15 @@ public class View extends JFrame {
     }
 
     /**
-     * Vajalik, et siia saaks peale isada JTable
-     * @return
+     * Vajalik, et siia saaks peale lisada JTable
      */
 
     public JPanel getPnlBottom() {
         return pnlBottom;
     }
+
+    public JPanel getPnlTop() {
+        return pnlTop;
+    }
+
 }

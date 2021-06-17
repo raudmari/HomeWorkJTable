@@ -12,7 +12,7 @@ public class App {
             view.pack();
             view.setLocationRelativeTo(null);
             view.setVisible(true);
-            //Model model = new Model();
+
         });
 
     }
