@@ -101,16 +101,16 @@ public class Controller {
                 String county = parts[7];
 
                 String rowInfo = "Eesnimi: " + fname.substring(1) + "\n"
-                        + "Perenimi: " + lname + "\n"
-                        + "Sugu: " + gender + "\n"
-                        + "Sündinud: " + birth + "\n"
-                        + "Surnud: " + death + "\n"
-                        + "Asula: " + place + "\n"
-                        + "Tüüp: " + type + "\n"
-                        + "Maakond: " + county.substring (0, county.length()-1) + "\n";
+                            + "Perenimi: " + lname + "\n"
+                            + "Sugu: " + gender + "\n"
+                            + "Sündinud: " + birth + "\n"
+                            + "Surnud: " + death + "\n"
+                            + "Asula: " + place + "\n"
+                            + "Tüüp: " + type + "\n"
+                            + "Maakond: " + county.substring(0, county.length() - 1) + "\n";
 
-                view.getPnlBottom().add(new JOptionPane(JOptionPane.showInputDialog(rowInfo))); // ei ole päris õige!
-
+                view.getPnlBottom().add(new JOptionPane(JOptionPane.showInputDialog(rowInfo)));
+                // ei ole päris õige!
             }
 
             @Override
@@ -135,9 +135,14 @@ public class Controller {
         int col = table.getColumnCount();
         tableModel.isCellEditable(row, col);
 
-        view.getPnlBottom().add(new JScrollPane(table)); // Tabeli lisamine paneelile koos kerimisribaga, kui selleks on vajadus. Vastavalt sisu suurusele
+        view.getPnlBottom().
+
+                add(new JScrollPane(table)); // Tabeli lisamine paneelile koos kerimisribaga, kui selleks on vajadus. Vastavalt sisu suurusele
         view.pack();
-        view.getPnlBottom().setVisible(true);
+        view.getPnlBottom().
+
+                setVisible(true);
+
     }
 
     private void getFileName() {
