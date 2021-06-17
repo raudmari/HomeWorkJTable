@@ -100,20 +100,19 @@ public class Controller {
                 String type = parts[6];
                 String county = parts[7];
                 String rowInfo = "Eesnimi: " + fName.substring(1) + "\n"
-                            + "Perenimi: " + lname + "\n"
-                            + "Sugu: " + gender + "\n"
-                            + "Sündinud: " + birth + "\n"
-                            + "Surnud: " + death + "\n"
-                            + "Asula: " + place + "\n"
-                            + "Tüüp: " + type + "\n"
-                            + "Maakond: " + county.substring(0, county.length() - 1) + "\n";
+                        + "Perenimi: " + lname + "\n"
+                        + "Sugu: " + gender + "\n"
+                        + "Sündinud: " + birth + "\n"
+                        + "Surnud: " + death + "\n"
+                        + "Asula: " + place + "\n"
+                        + "Tüüp: " + type + "\n"
+                        + "Maakond: " + county.substring(0, county.length() - 1) + "\n";
 
                 JOptionPane jop = new JOptionPane();
                 jop.setMessage(rowInfo);
                 jop.setMessageType(JOptionPane.INFORMATION_MESSAGE);
                 JDialog dialog = jop.createDialog("Isiku info");
                 dialog.setVisible(true);
-
             }
 
             @Override
@@ -130,7 +129,6 @@ public class Controller {
             public void mouseExited(MouseEvent e) {
 
             }
-
         });
 
 
@@ -138,9 +136,7 @@ public class Controller {
         int col = table.getColumnCount();
         tableModel.isCellEditable(row, col);
 
-        view.getPnlBottom().
-
-                add(new JScrollPane(table)); // Tabeli lisamine paneelile koos kerimisribaga, kui selleks on vajadus. Vastavalt sisu suurusele
+        view.getPnlBottom().add(new JScrollPane(table)); // Tabeli lisamine paneelile koos kerimisribaga, kui selleks on vajadus. Vastavalt sisu suurusele
         view.pack();
         view.getPnlBottom().
 
