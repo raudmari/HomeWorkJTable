@@ -91,7 +91,7 @@ public class Controller {
             @Override
             public void mousePressed(MouseEvent e) {
                 String value = tableModel.getDataVector().elementAt(table.getSelectedRow()).toString();
-                view.getPnlBottom().add(new JOptionPane(JOptionPane.showInputDialog(value)));
+                view.getPnlBottom().add(new JOptionPane(JOptionPane.showInputDialog(value))); // ei ole päris õige!
             }
 
             @Override
