@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Model { // faili sisu lugemine
-    private String filename;
+    private String fileName;
     private ArrayList<Filedata> fileData;
     private String[] columnNames;
 
@@ -16,15 +16,15 @@ public class Model { // faili sisu lugemine
         fileData = new ArrayList<>();
     }
 
-    public void setFilename(String filename) {
-        this.filename = filename;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
-    public String getFilename() {
-        return filename;
+    public String getFileName() {
+        return fileName;
     }
 
-    public ArrayList<Filedata> getFiledata() {
+    public ArrayList<Filedata> getFileData() {
         return fileData;
     }
 
@@ -34,7 +34,7 @@ public class Model { // faili sisu lugemine
 
     public void readFromFile() {
         fileData = new ArrayList<>(); // eelnevad andmed kustutatakse.
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             int r = 0;
             for (String line; (line = br.readLine()) != null; ) {
                 String[] parts = line.split(";");
